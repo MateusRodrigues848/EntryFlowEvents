@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EntryFlow Events</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+
+    {% for event in events %}
+        <div>
+            <h2>{{ event.name }}</h2>
+            <p>{{ event.description }}</p>
+            <p>{{ event.start_date }} até {{ event.end_date }}</p>
+            <p>Local: {{ event.location }}</p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>Nenhum evento cadastrado.</p>
+    {% endfor %}
+</body>
+</html>
