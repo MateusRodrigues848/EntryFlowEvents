@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'events',
+    'tickets',
+    'checkin',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'DIRS': [BASE_DIR / 'templates'],
     }
 }
 
