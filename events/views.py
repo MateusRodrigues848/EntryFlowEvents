@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import EventForm
+from .forms import EventForm, Event
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -16,5 +16,7 @@ def create_event(request):
 
     return render(request, 'events/create_event.html', {'form': form})
 
-def event_list(response):
-    return HttpResponse('deu bom')
+@login_required
+def event_list(request):
+    events = Event.objects.filter(organizer=request.user)
+    return render(request, 'events/event_list.html', {'events': events})

@@ -4,10 +4,16 @@
     <title>EntryFlow Events</title>
 </head>
 <body>
-    <h1>Eventos</h1>
+    <h1>Meus Eventos</h1>
+
+    <a href="{% url 'create_event' %}">
+        <button> Novo Evento </button>
+    </a>
+
+    <hr>
 
     {% for event in events %}
-        <div>
+        <div style="margin-bottom:20px;">
             <h2>{{ event.name }}</h2>
             <p>{{ event.description }}</p>
             <p>{{ event.start_date }} até {{ event.end_date }}</p>
