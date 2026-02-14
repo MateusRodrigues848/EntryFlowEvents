@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Modo Portaria</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            transition: background-color 0.3s ease;
+        }
+
+        body.sucesso {
+            background-color: #d4edda;
+        }
+
+        body.erro {
+            background-color: #f8d7da;
+        }
+
+        .box {
+            background: white;
+            margin: auto;
+            width: 400px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .verde {
+            color: #155724;
+        }
+
+        .vermelho {
+            color: #721c24;
+        }
+
+        h2 {
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body class="{% if status == 'sucesso' %}sucesso{% else %}erro{% endif %}">
+
+<div class="box">
+
+    {% if status == "sucesso" %}
+        <h1 class="verde">✔ ENTRADA LIBERADA</h1>
+    {% else %}
+        <h1 class="vermelho">✖ CHECK-IN JÁ REALIZADO</h1>
+    {% endif %}
+
+    <h2>{{ participant.name }}</h2>
+    <p><strong>Evento:</strong> {{ participant.event.name }}</p>
+    <p><strong>Horário:</strong> {{ now|date:"d/m/Y H:i:s" }}</p>
+
+    <a class="btn" href="/">Nova Leitura</a>
+
+</div>
+
+</body>
+</html>

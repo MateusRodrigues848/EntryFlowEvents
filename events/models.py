@@ -50,3 +50,13 @@ class Participant(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.event.name}"
+    
+
+    from django.utils import timezone
+
+class CheckIn(models.Model):
+    participant = models.ForeignKey('participant', on_delete=models.CASCADE, related_name='checkins')
+    checkin_time = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.participant.name} - {self.checkin_time}"
