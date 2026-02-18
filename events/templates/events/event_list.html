@@ -1,9 +1,7 @@
-<html>
-
 {% extends 'base.html' %}
 
 {% block content %}
-
+<h1 style="color:red;">TESTE AQUI</h1>
 <div class="container mt-5">
 
     <!-- Cabeçalho -->
@@ -14,14 +12,11 @@
         </a>
     </div>
 
-    <!-- Cards -->
     <div class="row">
-
         {% for event in events %}
         <div class="col-md-4 mb-4">
             <div class="card shadow-sm h-100 border-0">
                 <div class="card-body">
-
                     <h5 class="card-title fw-bold">
                         {{ event.name }}
                     </h5>
@@ -39,7 +34,6 @@
                         <strong>📍 Local:</strong>
                         {{ event.location }}
                     </p>
-
                 </div>
 
                 <div class="card-footer bg-white border-0 d-flex justify-content-between">
@@ -50,16 +44,14 @@
             </div>
         </div>
         {% empty %}
-            <div class="col-12">
-                <div class="alert alert-info text-center">
-                    Nenhum evento cadastrado ainda.
-                </div>
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                Nenhum evento cadastrado ainda.
             </div>
+        </div>
         {% endfor %}
-
     </div>
 
 </div>
 
 {% endblock %}
-</html>
