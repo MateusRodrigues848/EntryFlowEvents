@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">
+            🎟️ EntryFlowEvents
+        </h1>
+        <p class="lead text-muted">
+            Sistema moderno para gerenciamento de eventos
+        </p>
+
+        <div class="mt-4">
+            <a href="{% url 'event_list' %}" class="btn btn-primary btn-lg me-2">
+                Ver Eventos
+            </a>
+
+            <a href="{% url 'create_event' %}" class="btn btn-success btn-lg">
+                Criar Evento
+            </a>
+        </div>
+    </div>
+
+    <!-- Funcionalidades -->
+    <div class="row text-center">
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="fw-bold">📅 Gestão Completa</h5>
+                    <p class="text-muted">
+                        Crie, edite e gerencie eventos com facilidade.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="fw-bold">👥 Controle de Usuários</h5>
+                    <p class="text-muted">
+                        Sistema com autenticação e controle de acesso.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="fw-bold">📊 Relatórios e Estatísticas</h5>
+                    <p class="text-muted">
+                        Visualize dados importantes dos seus eventos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

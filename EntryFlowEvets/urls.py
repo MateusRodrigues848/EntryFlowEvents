@@ -18,13 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from events.views import home  # importa a view
 
+print("URLS CARREGADO")
 
 urlpatterns = [
+    path(' ', home, name='home'),
     path('admin/', admin.site.urls),
     path('events/', include('events.urls')),
-    ##path('create/', include('create.urls'))
-    
 ]
 
 

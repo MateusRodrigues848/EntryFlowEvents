@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Participant, CheckIn
 from django.db.models import Count
+from django.http import HttpResponse
+
 
 @login_required
 def create_event(request):
@@ -104,3 +106,9 @@ def portaria_checkin(request, qr_code):
         'status': status,
         'now': timezone.now()
     })
+
+def home(request):
+    return render("home.html")
+
+def teste(request):
+    return HttpResponse("TESTE FUNCIONANDO")    
