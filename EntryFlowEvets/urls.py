@@ -23,7 +23,7 @@ from events.views import home  # importa a view
 print("URLS CARREGADO")
 
 urlpatterns = [
-    path(' ', home, name='home'),
+    path('/', home, name='home'),
     path('admin/', admin.site.urls),
     path('events/', include('events.urls')),
 ]

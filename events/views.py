@@ -6,14 +6,16 @@ from .models import Participant, CheckIn
 from django.db.models import Count
 from django.http import HttpResponse
 
+def home(request):
+    return render("home.html")
 
-@login_required
+@login_required  # Força a Realização de login para Criar o Evento
 def create_event(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
         if form.is_valid():
             event = form.save(commit=False)
-            event.organizer = request.user  # 🔥 AQUI está o pulo do gato
+            event.organizer = request.user  # 
             event.save()
             return redirect('event_list')
     else:
@@ -107,8 +109,6 @@ def portaria_checkin(request, qr_code):
         'now': timezone.now()
     })
 
-def home(request):
-    return render("home.html")
 
 def teste(request):
     return HttpResponse("TESTE FUNCIONANDO")    
